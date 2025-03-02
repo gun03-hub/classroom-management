@@ -1,0 +1,168 @@
+/* src/Login.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Set a default font */
+  }
+  
+  .page-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    gap: 0;
+  }
+  
+  .character-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 50%;
+    height: 100%;
+    position: relative; /* Needed for absolute positioning */
+}
+
+/* Ellipse background */
+.character-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;  /* Cover the container fully */
+    height: 100%;
+    background-image: url('../assets/Elipse.png');
+    background-size: contain; /* Ensures full ellipse is visible */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1; /* Keep it behind the character */
+    
+    /* Move ellipse to the right */
+    left: 30px; /* Adjust this value as needed */
+    overflow: hidden;
+}
+
+
+/* Character image */
+.character-image {
+    width: 800px; /* Adjust as needed */
+    height: auto;
+    object-fit: contain;
+    z-index: 2; /* Ensure it's above the ellipse */
+    margin-bottom: -100px;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: 20%;
+  margin-top: 100px;;
+}
+
+.login-form {
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 320px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-top: 120px;
+}
+
+.login-form h2 {
+  font-family: "Jacques Francois", serif;
+  text-decoration: underline;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.login-form p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field {
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #000; /* Black border */
+    border-radius: 8px;
+    background: #FFFFFF;
+    font-size: 14px;
+    outline: none; /* Removes default outline */
+  }
+  
+  /* Add focus effect for better user experience */
+  .input-field:focus {
+    border-color: #1E3A8A; /* Optional: Change border color when focused */
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5); /* Optional: Adds glow effect */
+  }
+  
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.login-button {
+  width: 99%;
+  padding: 12px;
+  background: #1E3A8A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background: #1e4299;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.login-links a {
+  color: #1E3A8A;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-links a:hover {
+  color: #1e4299;
+  text-decoration: underline;
+}
+
