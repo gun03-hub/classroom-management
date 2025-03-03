@@ -29,9 +29,9 @@ useEffect(() => {
       <nav className="navbar">
         <div className="nav-logo">ClassFlow</div>
         <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About Us</a>
+          <button className="nav-link" onClick={() => navigate('/')}>Home</button>
+          <button className="nav-link" onClick={() => navigate('/contact')}>Contact</button>
+          <button className="nav-link" onClick={() => navigate('/about')}>About Us</button>
           <button className="login-btn" onClick={() => navigate('/login')}>Sign Up/Log In</button>
         </div>
       </nav>
