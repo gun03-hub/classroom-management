@@ -58,11 +58,11 @@ body, html{
     margin-top: -100px;
 }
 
-.login-container {
+.signup-container {
   width: 100%;
-  margin-top: -150px;
+  margin-top: -250px;
   height: auto;
-  margin-left: -100px;
+  margin-left: -10px;
 }
 
 .signup-form {
@@ -106,31 +106,36 @@ p {
   border-radius: 5px;
   font-size: 16px;
 }
-
-.login-button {
-  width: 97%;
-  padding: 10px;
-  background-color: #1E3A8A;
+.signup-button {
+  width: 99%;
+  padding: 12px;
+  background: #1E3A8A;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
 }
 
-.login-button:hover {
-  background-color: #1e4299;
+.signup-button:hover {
+  background: #1e4299;
 }
 
-.login-link {
-  margin-top: 10px;
+.signup-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
 }
 
-.login-link a {
-  color: #007bff;
+.signup-links a {
+  color: #1E3A8A;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-.login-link a:hover {
+.signup-links a:hover {
+  color: #1e4299;
   text-decoration: underline;
 }

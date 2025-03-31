@@ -70,9 +70,9 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  margin-left: 20%;
-  margin-top: 100px;;
+  width: 100%;
+  margin-left: 18%;
+  margin-top: -70px;;
 }
 
 .login-form {
@@ -128,6 +128,15 @@ body, html {
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.show-password {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   color: #666;
 }
