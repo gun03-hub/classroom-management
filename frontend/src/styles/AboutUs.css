@@ -1,6 +1,130 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin-top: -20px;  /* Increased from 20px to 40px */
+}
+
+.nav-logo {
+  font-size: 43px;
+  font-weight: normal;
+  padding-right: 40rem;
+  color: #000000;
+  font-family: 'Jacques Francois', Helvetica;
+  -webkit-text-stroke: 1px #000000;
+  width: 236px;
+  height: 57px;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  color: #1E3A8A;
+  text-decoration: none;
+  font-weight: 500;
+}
+.login-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: #1E3A8A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.nav-link {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0 10 px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* About Us Content */
+.content-container {
+  margin-top: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+.title {
+  font-size: 70px;
+  font-family: "Jacques Francois", Helvetica;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 20px;
+  color: black;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Team Members Section */
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.team-name {
+  font-size: 20px;
+  color: black;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .team-container {
+    flex-direction: column;
+  }
 }

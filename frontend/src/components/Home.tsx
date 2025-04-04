@@ -2,15 +2,30 @@ import React, { useState, useEffect } from 'react';
 import loginBg from '../assets/login.jpeg';
 import character from '../assets/char1.png';
 import teachersChar from '../assets/teachers.png';
-import adminChar from '../assets/admin.jpg';
-import './Home.css';
+import adminChar from '../assets/admin.png';
+import '../styles/Home.css';
 import { useNavigate } from 'react-router-dom';  // Add this import at the top
 
 const Home: React.FC = () => {
   const navigate = useNavigate();  // Add this hook
   const [activeTab, setActiveTab] = useState<'students' | 'teachers' | 'administration'>('students');
-  
   const [key, setKey] = useState(0);
+
+  // Add handleNavigation function
+  const handleNavigation = (direction: 'prev' | 'next') => {
+    if (direction === 'next') {
+      setActiveTab(prevTab => 
+        prevTab === 'students' ? 'teachers' : 
+        prevTab === 'teachers' ? 'administration' : 'students'
+      );
+    } else {
+      setActiveTab(prevTab => 
+        prevTab === 'administration' ? 'teachers' : 
+        prevTab === 'teachers' ? 'students' : 'administration'
+      );
+    }
+    setKey(prevKey => prevKey + 1);
+  };
 
 useEffect(() => {
   const interval = setInterval(() => {
@@ -32,10 +47,16 @@ useEffect(() => {
           <button className="nav-link" onClick={() => navigate('/')}>Home</button>
           <button className="nav-link" onClick={() => navigate('/contact')}>Contact</button>
           <button className="nav-link" onClick={() => navigate('/about')}>About Us</button>
-          <button className="login-btn" onClick={() => navigate('/login')}>Sign Up/Log In</button>
+          <button className="login-btn" onClick={() => navigate('/signup  ')}>Sign Up/Log In</button>
         </div>
       </nav>
-      <div className="flex-container slide-in"> 
+      <div className="flex-container slide-in position-relative"> 
+        <button 
+          className="nav-arrow nav-arrow-left" 
+          onClick={() => handleNavigation('prev')}
+        >
+          &#8249;
+        </button>
         {activeTab === 'students' ? (
           <>
             <div className="content-left">
@@ -43,6 +64,7 @@ useEffect(() => {
               <h2>For Students – Learn & Grow Effortlessly!</h2>
               <p>
               We provide the tools to access learning materials, submit assignments, track progress, and get academic support seamlessly.<br></br>
+              <br></br>
               ✔ Learning Resources – View and download study materials.
                 <br></br>
                 ✔ Assignments & Feedback – Submit work online and receive evaluations.
@@ -104,6 +126,12 @@ useEffect(() => {
           </>
         )}
       </div>
+      <button 
+        className="nav-arrow nav-arrow-right" 
+        onClick={() => handleNavigation('next')}
+      >
+        &#8250;
+      </button>
     </div>
   );
 };

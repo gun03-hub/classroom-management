@@ -5,7 +5,7 @@ import loginBg from '../assets/login.jpeg';
 import rectangle from '../assets/Rectangle 9.png';
 import character from '../assets/char1.png';
 import Elipse from '../assets/Ellipse 6.png';
-import './Login.css';
+import '../styles/Login.css';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();

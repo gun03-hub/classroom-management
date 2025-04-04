@@ -13,17 +13,19 @@
   align-items: center;
   flex: 1;
   padding: 0 5%;
+  margin-top: -50px;
   height: calc(100vh - 80px);  /* Added fixed height accounting for navbar */
   overflow: hidden;  /* Added to prevent content overflow */
 }
 
-.character-container {
+  .character-container {
   flex: 1;
   width: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 40%;  /* Changed from 50% */
+  margin-top: 100px;
   position: relative;/* Added to contain the character */
 }
 
@@ -36,20 +38,38 @@
   margin-top: -50px;
   position: relative;  /* Added for better positioning */
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2%;
+  padding: 1rem 1%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  margin-top: 20px;  /* Increased from 20px to 40px */
+}
+
+/* Adjust flex container to maintain proper spacing */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 20px 60px;
+  height: calc(100vh - 120px);  /* Adjusted to account for increased navbar margin */
+  overflow: visible;
 }
 
 .nav-logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 43px;
+  font-weight: normal;
   padding-right: 40rem;
-  color: #1E3A8A;
+  color: #000000;
+  font-family: 'Jacques Francois', Helvetica;
+  -webkit-text-stroke: 1px #000000;
+  width: 236px;
+  height: 57px;
+  text-align: center;
 }
 .nav-links {
   display: flex;
@@ -68,17 +88,25 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}.content-left {
+}.content-left {  
   flex: 1;
   max-width: 600px;
+  margin-top: 70px;
   padding-right: 20px;
 }
 .content-left h1 {
-  font-size: 40px;
-  color: #1E3A8A;
+  font-size: 43px;
+  color: #000000;
   margin-bottom: 2rem;
   margin-top: -20px;
-  font-weight: 600;
+  margin-left: 30px;
+  font-family: 'Jacques Francois', Helvetica;
+  font-weight: normal;
+  -webkit-text-stroke: 1px #000000;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
 }
 .content-left h2 {
   font-size: 22px;
@@ -102,8 +130,8 @@
 }.character-container::before {
     content: "";
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     background-image: url('../assets/Elipse.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -111,7 +139,7 @@
     z-index: 1;
     overflow: hidden;
   }.character-image {
-  width: 600px;
+  width: 400px;
   height: auto;
   object-fit: contain;
   z-index: 2;
@@ -141,7 +169,7 @@
   color: inherit;
   cursor: pointer;
   font: inherit;
-  padding: 0 15px;
+  padding: 0 10 px;
   text-decoration: none;
 }
 
@@ -176,7 +204,7 @@
     align-items: flex-end;
     height: 40%;
     position: relative;
-    margin-top: 300px;  /* Adjusted from 500px */
+    margin-top: 380px;  /* Adjusted from 500px */
   }.character-container1 .character-image {
     width: 600px;
     height: auto;
@@ -193,19 +221,21 @@
     align-items: center;
     height: 40%;
     position: relative;
-    margin-top: 400px;
-  }.character-container2::before {
-    content: "";
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    background-image: url('../assets/Elipse.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
-    overflow: hidden;
-  }.character-container2 .character-image {
+    margin-top: 470px;
+  }
+  /* Remove or comment out this block to remove the background */
+  /* .character-container2::before {
+      content: "";
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      background-image: url('../assets/Elipse.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
+      overflow: hidden;
+  } */.character-container2 .character-image {
     width: 600px;
     height: auto;
     object-fit: contain;
@@ -214,3 +244,153 @@
     margin-right: -80px;
     margin-top: -100px;
   }
+.position-relative {
+  position: relative;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.nav-arrow-left {
+  left: -35px;
+  margin-top: -43px;
+}
+
+.nav-arrow-right {
+  right: 20px;
+}
+
+
+/* Add these media queries at the end of your existing CSS */
+
+/* For tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+  .nav-logo {
+    padding-right: 20rem;
+  }
+
+  .character-image {
+    width: 400px;
+  }
+
+  .content-left h1 {
+    font-size: 32px;
+  }
+
+  .content-left p {
+    font-size: 20px;
+  }
+}
+
+/* For tablets */
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-logo {
+    padding-right: 10rem;
+  }
+
+  .content-left {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .character-container, 
+  .character-container1, 
+  .character-container2 {
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .character-image {
+    width: 300px;
+    margin: 0;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-logo {
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .content-left h1 {
+    font-size: 28px;
+  }
+
+  .content-left h2 {
+    font-size: 20px;
+  }
+
+  .content-left p {
+    font-size: 16px;
+  }
+
+  .character-image {
+    width: 250px;
+  }
+
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .flex-container {
+    height: auto;
+    min-height: calc(100vh - 60px);
+  }
+
+  .character-container, 
+  .character-container1, 
+  .character-container2 {
+    height: auto;
+  }
+
+  .character-image {
+    width: 200px;
+  }
+}

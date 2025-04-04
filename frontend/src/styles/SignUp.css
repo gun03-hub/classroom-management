@@ -60,8 +60,8 @@ body, html{
 
 .signup-container {
   width: 100%;
-  margin-top: -250px;
-  height: auto;
+  margin-top: -500px;
+  height: 100%;
   margin-left: -10px;
 }
 
@@ -70,9 +70,8 @@ body, html{
   border-radius: 20px;
   width: 330px;
   position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   align-items: center;
-  height: auto;
+  height: 420px;
   margin-top: 330px;
   margin-right: 50px;
 }

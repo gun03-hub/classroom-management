@@ -5,7 +5,7 @@ import loginBg from '../assets/login.jpeg';
 import rectangle from '../assets/Rectangle 9.png';
 import character from '../assets/char1.png';
 import Elipse from '../assets/Ellipse 6.png';
-import './SignUp.css';
+import '../styles/SignUp.css';
 
 const SignUp: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const SignUp: React.FC = () => {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/user/signup/', {
+      const response = await axios.post('http://127.0.0.1:8000/api/admin/signup/', {
         first_name: firstName,
         last_name: lastName,
         phone,
