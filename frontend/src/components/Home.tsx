@@ -48,6 +48,7 @@ useEffect(() => {
           <button className="nav-link" onClick={() => navigate('/contact')}>Contact</button>
           <button className="nav-link" onClick={() => navigate('/about')}>About Us</button>
           <button className="login-btn" onClick={() => navigate('/signup  ')}>Sign Up/Log In</button>
+          <button className='nav-link' onClick={() => navigate('/dashboard')}>Dashboard</button>
         </div>
       </nav>
       <div className="flex-container slide-in position-relative"> 

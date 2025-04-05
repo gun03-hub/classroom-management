@@ -5,6 +5,7 @@ import Contact from './components/Contact';
 import Login from './components/Login';
 import SignUp from './components/SignUp';// Verify this path is correct
 import AboutUs from './components/AboutUs';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path='/dashboard' element={<Dashboard/>} /> {/* Changed from /dashboard to /dashboard for consistency */   }
       </Routes>
     </BrowserRouter>
   );

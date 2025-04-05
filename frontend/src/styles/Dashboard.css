@@ -1,64 +1,170 @@
 .dashboard {
-  width: 100%;
+  display: flex;
   min-height: 100vh;
   background-size: cover;
   background-position: center;
   font-family: "Jacques Francois", serif;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  margin-top: -20px;
+.sidebar {
+  width: 150px;
+  background: #D9D9D9;
+  padding: 20px;
+  border-right: 2px solid #000;
 }
 
-.nav-logo {
-  font-size: 43px;
-  font-weight: normal;
-  padding-right: 40rem;
-  color: #000000;
-  font-family: 'Jacques Francois', Helvetica;
-  -webkit-text-stroke: 1px #000000;
-  width: 236px;
-  height: 57px;
+  .logo {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 150px;
+  text-align: center;
+  color: #000;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-item {
+  padding: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  text-align: center;  /* Changed from left to center */
+  cursor: pointer;
+  color: #000;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-item.active {
+  background-color: #95B3D2;
+  border-radius: 5px;
+  font-weight: bold;
+  border-left: solid;
+  width: 195px;
+  margin-left: -25px;
+  text-align: center;  /* Ensure text stays centered when active */
+  padding-right: 25px;  /* Compensate for the margin-left */
+}
+
+.nav-item:hover {
+  background-color: #c4c4c4;
+  border-radius: 5px;
+}
+
+.nav-item.active {
+  background-color: #95B3D2;
+  border-radius: 5px;
+  font-weight: bold;
+  border-left: solid;
+  width: 195px;
+  margin-left: -25px;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #95B3D2;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  border-bottom: 1px solid #000;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+}
+
+.user-info {
+  background: #D9D9D9;
+  padding: 30px;
+  margin-bottom: 30px;
+  margin-top: -30px;
+  margin-left: -20px;
+  width: 100%;
+  height: 90px;  /* Slightly increased height to accommodate padding */
+  border-radius: 5px;
+}
+
+.user-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;  /* Increased from 10px */
+  font-size: 20px;
+  padding: 5px 40px;  /* Increased horizontal padding from 20px */
+}
+
+.user-details div {
+  padding: 1px 30px;  /* Added horizontal padding */
+  font-family: "Jacques Francois", serif;
+  display: flex;
+  gap: 15px;  /* Added gap between label and value */
+}
+
+.user-info {
+  background: #D9D9D9;
+  padding: 30px;
+  margin-bottom: 30px;
+  margin-top: -30px;
+  margin-left: -20px;
+  width: 100%;
+  height: 80px;  /* Slightly increased height to accommodate padding */
+  border-radius: 5px;
+}
+
+.content-area {
+  padding: 20px;
+  color: #fff;
   text-align: center;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-links a {
-  color: #1E3A8A;
+.content-area h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
   text-decoration: none;
-  font-weight: 500;
+  color: #fff;
 }
 
-.nav-link {
-  background: none;
-  border: none;
-  color: inherit;
+.content-area h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.add-button, .submit-button {
+  background: #D9D9D9;
+  border: 2px solid #000;
+  border-radius: 42px;
+  padding: 0.6rem 2rem;
+  font-size: 20px;
   cursor: pointer;
-  font: inherit;
-  padding: 0;
-  text-decoration: none;
+  margin: 1rem;
+  color: #000;
 }
 
-.nav-link:hover {
-  color: #007bff;
+.add-button:hover, .submit-button:hover {
+  background: #c4c4c4;
 }
 
-.login-btn {
-  padding: 0.5rem 1.5rem;
-  background-color: #1E3A8A;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.department-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.department-info p {
+  margin: 1rem 0;
+  font-size: 20px;
 }
